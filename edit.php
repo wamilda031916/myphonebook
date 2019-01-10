@@ -12,13 +12,13 @@ $row = mysqli_fetch_assoc($result);
 <head>
 <meta charset="utf-8">
 <title>Update Record</title>
-<link href="bootstrap4-offline-docs-master">
-<link rel="stylesheet" href="style.css" />
+<link href="bootstrap-4.0.0-beta.3-dist">
+<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
 <div class="form">
-<p><a href="dashboard.php">Dashboard</a> | <a href="insert.php">Insert New Record</a> | <a href="logout.php">Logout</a></p>
-<h1>Update Record</h1>
+<center><p><a href="dashboard.php">Dashboard</a> | <a href="insert.php">Insert New Record</a> | <a href="logout.php">Logout</a></p></center>
+<center><h1>Update Record</h1></center>
 <?php
 $status = "";
 if(isset($_POST['new']) && $_POST['new']==1)

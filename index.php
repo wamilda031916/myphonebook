@@ -5,14 +5,14 @@ include("auth.php");  ?>
 <head>
 <meta charset="utf-8">
 <title>Welcome Home</title>
-<link href="bootstrap4-offline-docs-master">
-<link rel="stylesheet" href="style.css" />
+<link href="bootstrap-4.0.0-beta.3-dist">
+<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
 <div class="form">
-<h1>W-E-L-C-O-M-E <?php echo $_SESSION['username']; ?>!</h1>
-<p><a href="dashboard.php">Dashboard</a></p>
-<a href="logout.php">Logout</a>
+<center><h1>W-E-L-C-O-M-E <?php echo $_SESSION['username']; ?>!</h1></center>
+<center><h2><a href="dashboard.php">Dashboard</a></h2></center>
+<center><h2><a href="logout.php">Logout</a></h2></center>
 </div>
 </body>
 </html>

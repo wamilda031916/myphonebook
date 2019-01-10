@@ -7,17 +7,25 @@ include("auth.php");  ?>
 <head>
 <meta charset="utf-8">
 <title>Dashboard</title>
-<link href="bootstrap4-offline-docs-master">
-<link rel="stylesheet" href="style.css" />
+<link href="bootstrap-4.0.0-beta.3-dist">
+<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+<style>
+	body{
+	background-image: url(download.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	}
+</style>
 <body>
 <div class="form">
-<p>Welcome to Dashboard.</p>
+<center><h1>Welcome <?php echo $_SESSION['username']; ?>!</h1></center>
 
-<p><a href="index.php">Home</a><p>
-<p><a href="insert.php">Insert New Record</a></p>
-<p><a href="view.php">View Records</a><p>
-<p><a href="logout.php">Logout</a></p>
+<center><h2><a href="index.php">Home</a></h2></center>
+<center><h2><a href="insert.php">Insert New Record</a></h2></center>
+<center><h2><a href="view.php">View Records</a></h2></center>
+<center><h2><a href="logout.php">Logout</a></h><center>
 </div>
 </body>
 </html>

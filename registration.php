@@ -7,8 +7,16 @@
 <head>
 <meta charset="utf-8">
 <title>Registration</title>
-<link href="bootstrap4-offline-docs-master">
-<link rel="stylesheet" href = "style.css" />
+<link href="bootstrap-4.0.0-beta.3-dist">
+<link rel="stylesheet" type="text/css" href = "style.css" />
+<style>
+	body{
+	background-image: url(images3.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	}
+</style>
 </head>
 <body>
 <?php
@@ -25,7 +33,7 @@
         $query = "INSERT into `users` (username, password, email, trn_date) VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
         $result = mysqli_query($con,$query);
         if($result){
-            echo "<div class='form'><h3>You are registered successfully.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
+            echo "<div class='form'><center><h3>You are registered successfully.</h3></center><br/><center>Click here to <a href='login.php'>Login</a></center></div>";
         }
     }else{
 ?>

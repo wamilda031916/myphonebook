@@ -6,8 +6,8 @@
 <head>
 <meta charset="utf-8">
 <title>Login</title>
-<link href="bootstrap4-offline-docs-master">
-<link rel="stylesheet" href="style.css" />
+<link href="bootstrap-4.0.0-beta.3-dist">
+<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
 <?php

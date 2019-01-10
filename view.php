@@ -7,9 +7,17 @@ include("auth.php");
 <head>
 <meta charset="utf-8">
 <title>View Records</title>
-<link href="bootstrap4-offline-docs-master">
-<link rel="stylesheet" href="style.css" />
+<link href="bootstrap-4.0.0-beta.3-dist">
+<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+<style>
+	body{
+	background-image: url(image4.jpeg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	}
+</style>
 <body>
 <div class="form">
 <p><a href="index.php">Home</a> | <a href="insert.php">Insert New Record</a> | <a href="logout.php">Logout</a></p>
