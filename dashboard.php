@@ -5,27 +5,35 @@ include("auth.php");  ?>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Dashboard</title>
-<link href="bootstrap-4.0.0-beta.3-dist">
-<link rel="stylesheet" type="text/css" href="style.css" />
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+   <link href="bootstrap/css/bootstrap.min.css">
+   <title>Dashboard</title>
+</head>
 </head>
 <style>
 	body{
-	background-image: url(download.jpg);
+	background-image: url(insert.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
 	}
 </style>
 <body>
-<div class="form">
-<center><h1>Welcome <?php echo $_SESSION['username']; ?>!</h1></center>
-
-<center><h2><a href="index.php">Home</a></h2></center>
-<center><h2><a href="insert.php">Insert New Record</a></h2></center>
-<center><h2><a href="view.php">View Records</a></h2></center>
-<center><h2><a href="logout.php">Logout</a></h><center>
+<ul>
+   <li class='active'><a href="dashboard.php?username=<?php echo $_SESSION['username']; ?>">Home</a></li>
+   <li><a href="insert.php?username=<?php echo $_SESSION['username']; ?>">New record</a></li>
+   <li><a href="view.php?username=<?php echo $_SESSION['username']; ?>">Logout</a></li>
+   <li><a href='logout.php'>Logout</a></li>
+</ul>
+</div>
+<center><h1>View Records</h1></center>
+<br><center><h1>W-E-L-C-O-M-E <?php echo $_SESSION['username']; ?>!</h1></center><>
 </div>
 </body>
 </html>
+
+

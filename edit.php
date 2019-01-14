@@ -13,7 +13,7 @@ $row = mysqli_fetch_assoc($result);
 <meta charset="utf-8">
 <title>Update Record</title>
 <link href="bootstrap-4.0.0-beta.3-dist">
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
 <div class="form">
@@ -25,10 +25,13 @@ if(isset($_POST['new']) && $_POST['new']==1)
 {
 $id=$_REQUEST['id'];
 $trn_date = date("Y-m-d H:i:s");
-$name =$_REQUEST['name'];
+$firstname =$_REQUEST['firstname'];
+$lastname =$_REQUEST['lastname'];
 $age =$_REQUEST['age'];
-$submittedby = $_SESSION["username"];
-$update="update new_record set trn_date='".$trn_date."', name='".$name."', age='".$age."', submittedby='".$submittedby."' where id='".$id."'";
+$address =$_REQUEST['address'];
+$number =$_REQUEST['number'];
+
+$update="update new_record set trn_date='".$trn_date."', firstname='".$firstname."', lastname='".$lastname."', age='".$age."', address='".$address."'  where id='".$id."'";
 mysqli_query($con, $update) or die(mysqli_error());
 $status = "Record Updated Successfully. </br></br><a href='view.php'>View Updated Record</a>";
 echo '<p style="color:#FF0000;">'.$status.'</p>';
@@ -38,8 +41,11 @@ echo '<p style="color:#FF0000;">'.$status.'</p>';
 <form name="form" method="post" action=""> 
 <input type="hidden" name="new" value="1" />
 <input name="id" type="hidden" value="<?php echo $row['id'];?>" />
-<p><input type="text" name="name" placeholder="Enter Name" required value="<?php echo $row['name'];?>" /></p>
-<p><input type="text" name="age" placeholder="Enter Age" required value="<?php echo $row['age'];?>" /></p>
+<p><input type="text" name="firstname" placeholder="Enter your Firstname" required value="<?php echo $row['firstname'];?>" /></p>
+<p><input type="text" name="lastname" placeholder="Enter your Lastname" required value="<?php echo $row['lastname'];?>" /></p>
+<p><input type="text" name="age" placeholder="Enter your Age" required value="<?php echo $row['age'];?>" /></p>
+<p><input type="text" name="address" placeholder="Enter your Address" required value="<?php echo $row['address'];?>" /></p>
+<p><input type="text" name="number" placeholder="Enter your Number" required value="<?php echo $row['number'];?>" /></p>
 <p><input name="submit" type="submit" value="Update" /></p>
 </form>
 <?php } ?>

@@ -29,12 +29,24 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `new_record` (
   `id` int(50) NOT NULL AUTO_INCREMENT,
   `trn_date` datetime NOT NULL,
-  `name` varchar(100) NOT NULL,
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL,
   `age` int(10) NOT NULL,
-  `submittedby` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  `address` varchar(100) NOT NULL,
+  `contact` int(100) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (username) REFERENCES users(username)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
+
+-- Dumping data for table `new_record`
+--
+
+INSERT INTO `new_record` (`id`, `trn_date`, `firstname`, `lastname`,`address`,`contact``contact`) VALUES
+(1, 1, 'awd', 'daw', 'a'),
+(2, 3, 'dasdas', 'asddas', 'dasdasd'),
+(3, 3, 'asd', 'asd', '123');
 -- --------------------------------------------------------
 
 --

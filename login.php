@@ -6,8 +6,16 @@
 <head>
 <meta charset="utf-8">
 <title>Login</title>
-<link href="bootstrap-4.0.0-beta.3-dist">
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link  href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/login.css" />
+<style>
+	body{
+	background-image: url(images3.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	}
+</style>
 </head>
 <body>
 <?php
@@ -25,20 +33,20 @@
 		$rows = mysqli_num_rows($result);
         if($rows==1){
 			$_SESSION['username'] = $username;
-			header("Location: index.php"); 
+			header("Location: dashboard.php"); 
             }else{
 				echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
 				}
     }else{
 ?>
-<div class="form">
+<div class="header">
 <center><h1>Log In</h1></center>
 <form action="" method="post" name="login">
 <input type="text" name="username" placeholder="Username" required />
 <input type="password" name="password" placeholder="Password" required />
 <input name="submit" type="submit" value="Login" />
 </form>
-<center><p>Not registered yet? <a href='registration.php'>Register Here</a></p></center>
+<center><h4>Not registered yet? </h4><a href='registration.php'>Register Here</a></center>
 
 </div>
 <?php } ?>
