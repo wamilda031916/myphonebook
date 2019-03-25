@@ -7,8 +7,8 @@
 <head>
 <meta charset="utf-8">
 <title>Registration</title>
-<link href="bootstrap-4.0.0-beta.3-dist">
-<link rel="stylesheet" type="text/css" href = "css/style.css" />
+<link rel="stylesheet" href="bootstrap/bootstrap/css/main.css">
+<link rel="stylesheet" type="text/css" href = "css/register.css" />
 <style>
 	body{
 	background-image: url(images3.png);
@@ -30,7 +30,7 @@
 		$password = mysqli_real_escape_string($con,$password);
 
 		$trn_date = date("Y-m-d H:i:s");
-        $query = "INSERT into `users` (username, password, email, trn_date) VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
+        $query = "INSERT into `admin` (username, password, email, trn_date) VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
         $result = mysqli_query($con,$query);
         if($result){
             echo "<div class='form'><center><h1>You are registered successfully.</h></center><br/><center>Click here to <a href='login.php'>Login</a></center></div>";

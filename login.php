@@ -8,35 +8,27 @@
 <title>Login</title>
 <link  href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/login.css" />
-<style>
-	body{
-	background-image: url(images3.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	width: 100%;
-	}
-</style>
 </head>
 <body>
 <?php
 	require('db.php');
 	session_start();
-    if (isset($_POST['username'])){
+    if (isset($_POST['submit'])){
 		
 		$username = stripslashes($_REQUEST['username']); 
 		$username = mysqli_real_escape_string($con,$username); 
 		$password = stripslashes($_REQUEST['password']);
 		$password = mysqli_real_escape_string($con,$password);
 		
-        $query = "SELECT * FROM `users` WHERE username='$username' and password='".md5($password)."'";
+        $query = "SELECT * FROM `admin` WHERE username='$username' and password='".md5($password)."'";
 		$result = mysqli_query($con,$query) or die(mysqli_error());
 		$rows = mysqli_num_rows($result);
         if($rows==1){
 			$_SESSION['username'] = $username;
 			header("Location: dashboard.php"); 
-            }else{
-				echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
-				}
+         }else{
+         	echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
+		}
     }else{
 ?>
 <div class="header">

@@ -15,23 +15,24 @@ include("auth.php");  ?>
 </head>
 </head>
 <style>
-	body{
-	background-image: url(insert.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	width: 100%;
-	}
+  body{
+  background-image: url(images/background1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  }
 </style>
 <body>
 <ul>
-   <li class='active'><a href="dashboard.php?username=<?php echo $_SESSION['username']; ?>">Home</a></li>
-   <li><a href="insert.php?username=<?php echo $_SESSION['username']; ?>">New record</a></li>
-   <li><a href="view.php?username=<?php echo $_SESSION['username']; ?>">Logout</a></li>
-   <li><a href='logout.php'>Logout</a></li>
+   <li class='active'><h3><a href="dashboard.php?username=<?php echo $_SESSION['username']; ?>">Home</a></h3></li>
+   <li><h3><a href="view_customers.php?username=<?php echo $_SESSION['username']; ?>">Customers</a></h3></li>
+  <li><h3><a href="view_products.php?username=<?php echo $_SESSION['username']; ?>">Products</a></h3></li>
+  <li><h3><a href="sales_invoice.php?username=<?php echo $_SESSION['username']; ?>">Sales Invoice</a></h3></li>
+  <li><h3><a href='logout.php'>Logout</a></h3></li>
 </ul>
 </div>
-<center><h1>View Records</h1></center>
-<br><center><h1>W-E-L-C-O-M-E <?php echo $_SESSION['username']; ?>!</h1></center><>
+<br>
+<br><center><h1>W-E-L-C-O-M-E <?php echo $_SESSION['username']; ?>!</h1></center></br>
 </div>
 </body>
 </html>
