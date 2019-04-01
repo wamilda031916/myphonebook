@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="css/insert.css">
 	<!-- Script -->
 	<script src="bootstrap/js/jquery.js"></script>
-	<script src="bootstrap/js/popper.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
   </head>
   <style>

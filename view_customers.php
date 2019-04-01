@@ -15,7 +15,7 @@ include "auth.php";
 </head>
 <style>
   body{
-  background-image: url(.jpg);
+  background-image: url(images/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;

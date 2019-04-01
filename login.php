@@ -8,6 +8,15 @@
 <title>Login</title>
 <link  href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/login.css" />
+
+<style>
+	body{
+	background-image: url(images/background1.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	}
+</style>
 </head>
 <body>
 <?php

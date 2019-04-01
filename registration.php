@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href = "css/register.css" />
 <style>
 	body{
-	background-image: url(images3.png);
+	background-image: url(images/table2.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
