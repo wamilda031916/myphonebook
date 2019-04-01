@@ -4,7 +4,7 @@ require('db.php');
 include("auth.php");
 
 $status = "";
-if(isset($_POST['new']) && $_POST['new']==1)
+if(isset($_POST['submit']) && $_POST['new']==1)
 {
 $firstname =$_REQUEST['firstname'];
 $mi = $_REQUEST['mi'];
@@ -14,7 +14,7 @@ $customer_barangay =$_REQUEST['customer_barangay'];
 $city = $_REQUEST['city'];
 $contact_num =$_REQUEST['contact_num'];
 $username = $_SESSION["username"];
-$ins_query="INSERT INTO `customer`(`firstname`, `mi`, `lastname`, `customer_street`, `customer_barangay`, `city`, `contact_num`, `username`) VALUES ('$firstname','$mi','$lastname','$customer_street','$customer_barangay','$city','$contact_num','$username')";
+$ins_query="INSERT INTO `customer`(`firstname`, `mi`, `lastname`, `customer_street`, `customer_barangay`, `city`, `contact_num`) VALUES ('$firstname','$mi','$lastname','$customer_street','$customer_barangay','$city','$contact_num')";
 mysqli_query($con,$ins_query) or die(mysql_error());
 header('loacation: view_customers.php');
 }
@@ -28,7 +28,7 @@ header('loacation: view_customers.php');
 <link rel="stylesheet" type="text/css" href="css/insert.css" />
 <style>
 	body{
-	background-image: url(dashboard.jpg);
+	background-image: url(images/resto.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
@@ -37,7 +37,7 @@ header('loacation: view_customers.php');
 </head>
 <body>
 <div class="form">
-<p><a href="dashboard.php">Dashboard</a> | <a href="view_customers.php?username=<?php echo $_SESSION['username']; ?>">View Customers</a> | <a href="logout.php">Logout</a></p>
+<p><a href="dashboard.php">Dashboard</a> | <a href="view_customers.php?">View Customers</a> | <a href="logout.php">Logout</a></p>
 
 <div>
 <h1>Insert New Customer</h1>

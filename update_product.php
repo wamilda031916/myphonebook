@@ -1,15 +1,14 @@
 <?php
 
 include "db.php";
-session_start();
 
-$id  = $_POST['id'];
+$product_code  = $_POST['product_code'];
 $description   = $_POST['description'];
 $price  = $_POST['price'];
 $unit  = $_POST['unit'];
 
 
-$sql = "UPDATE product SET description = '$description', price = '$price', unit = '$unit' WHERE id = $id ";
+$sql = "UPDATE product SET description = '$description', price = '$price', unit = '$unit' WHERE product_code = $product_code ";
 
 $res = mysqli_query($con, $sql);
 

@@ -1,8 +1,14 @@
 <?php
 
-require('db.php');
-$id=$_REQUEST['id'];
-$query = "DELETE FROM product WHERE id=$id"; 
-$result = mysqli_query($con,$query) or die ( mysqli_error());
-header("Location: view_products.php"); 
-?>
+include "db.php";
+
+$product_code = $_GET['product_code'];
+
+$query = "DELETE FROM product WHERE product_code = $product_code";
+
+$res = mysqli_query($con, $query);
+
+mysqli_close($con);
+
+header('location: view_products.php');
+exit;

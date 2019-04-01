@@ -1,7 +1,6 @@
 <?php 
 require('db.php');
-include("auth.php");
-
+include "auth.php";
 
 ?>
 <!DOCTYPE html>
@@ -25,7 +24,8 @@ include("auth.php");
 <body>
 
 <ul>
-   <li class='active'><a href='dashboard.php'>Home</a></li>
+  <li class='active'><a href='dashboard.php'>Home</a></li>
+  <li><a href='customer.php'>Add Customers</a></li>
   <li><a href='products.php'>Add Products</a></li>
   <li><a href='sales_invoice.php'>Sales Invoice</a></li>
   <li><a href='logout.php'>Logout</a></li>
@@ -44,15 +44,15 @@ include("auth.php");
 <?php
 $count=1;
 $username=$_SESSION['username'];
-$sel_query="Select * from product where username='$username'";
+$sel_query="Select * from product";
 $result = mysqli_query($con,$sel_query);
 while($row = mysqli_fetch_assoc($result)) { ?>
-<tr><td align="center"><?php echo $count; ?></td>
+<tr><td align="center"><?php echo $row["product_code"]; ?></td>
     <td align="center"><?php echo $row["description"]; ?></td>
     <td align="center"><?php echo $row["price"]; ?></td>
     <td align="center"><?php echo $row["unit"]; ?></td>
-    <td align="center"><a href="edit_product.php?id=<?php echo $row["id"]; ?>">Edit</a></td>
-    <td align="center"><a href="delete_products.php?id=<?php echo $row["id"]; ?>">Delete</a></td></tr>
+    <td align="center"><a href="edit_product.php?product_code=<?php echo $row["product_code"]; ?>">Edit</a></td>
+    <td align="center"><a href="delete_products.php?product_code=<?php echo $row['product_code']; ?>">Delete</a></td></tr>
 <?php $count++; } ?>
 </tbody>
 </table>

@@ -4,14 +4,15 @@ require('db.php');
 include("auth.php");
 
 $status = "";
-if(isset($_POST['new']) && $_POST['new']==1)
+if(isset($_POST['submit']) && $_POST['new']==1)
 {
 $description =$_REQUEST['description'];
 $price = $_REQUEST['price'];
 $unit =$_REQUEST['unit'];
 $username = $_SESSION["username"];
-$ins_query="INSERT INTO `product`(`description`, `price`, `unit`, `username`) VALUES ('$description','$price','$unit','$username')";
+$ins_query="INSERT INTO `product`(`description`, `price`, `unit`) VALUES ('$description',$price,'$unit')";
 mysqli_query($con,$ins_query) or die(mysql_error());
+
 header('loacation: view_products.php');
 }
 ?>
@@ -24,7 +25,7 @@ header('loacation: view_products.php');
 <link rel="stylesheet" type="text/css" href="css/insert.css" />
 <style>
 	body{
-	background-image: url(dashboard.jpg);
+	background-image: url(images/catering.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
@@ -33,11 +34,11 @@ header('loacation: view_products.php');
 </head>
 <body>
 <div class="form">
-<p><a href="dashboard.php">Dashboard</a> | <a href="view_products.php?username=<?php echo $_SESSION['username']; ?>">View Products</a> | <a href="logout.php">Logout</a></p>
+<p><a href="dashboard.php">Dashboard</a> | <a href="view_products.php?">View Products</a> | <a href="logout.php">Logout</a></p>
 
 <div>
 <h1>Insert New Product</h1>
-<form name="form" method="post" action="products.php"> 
+<form method="post" action=""> 
 <input type="hidden" name="new" value="1" />
 <p><input type="text" name="description" placeholder="Enter description" required /></p>
 <p><input type="number" name="price" placeholder="Enter price" required /></p>

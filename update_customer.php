@@ -3,7 +3,7 @@
 include "db.php";
 session_start();
 
-$id  = $_POST['id'];
+$customer_id  = $_POST['customer_id'];
 $firstname   = $_POST['firstname'];
 $mi  = $_POST['mi'];
 $lastname  = $_POST['lastname'];
@@ -14,7 +14,7 @@ $contact_num  = $_POST['contact_num'];
 
 
 
-$sql = "UPDATE customer SET firstname = '$firstname', mi = '$mi', lastname = '$lastname', customer_street = '$customer_street', customer_barangay = '$customer_barangay', city = '$city', contact_num = '$contact_num' WHERE id = $id ";
+$sql = "UPDATE customer SET firstname = '$firstname', mi = '$mi', lastname = '$lastname', customer_street = '$customer_street', customer_barangay = '$customer_barangay', city = '$city', contact_num = '$contact_num' WHERE customer_id = $customer_id ";
 
 $res = mysqli_query($con, $sql);
 
